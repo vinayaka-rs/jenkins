@@ -16,11 +16,7 @@ job('Spring-boot-build') {
     }
 
     publishers {
-        downstreamParameterized {
-            trigger('Spring-boot-test') {
-                condition('SUCCESS')
-            }
-        }
+        downstream('Spring-boot-test', 'SUCCESS')
     }
 
 }
