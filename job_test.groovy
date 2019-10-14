@@ -90,3 +90,4 @@ job('Spring-build-publish') {
         gradle('clean build')
     }
 }
+}
