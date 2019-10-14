@@ -16,29 +16,31 @@ job('Spring-boot-build') {
         gradle('clean build')
         publishers { 
             mailer('vinayaka_rs@outlook.com', true, true) 
-            extendedEmail { recipientList('vinayaka_rs@outlook.com') 
-            defaultSubject('$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!') 
-            defaultContent('$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:\n' + '\n' + 'Check console output at $BUILD_URL to view the results.') 
-            contentType('text/html') 
-            triggers { 
-                failure { 
-                    replyToList('$PROJECT_DEFAULT_REPLYTO') 
-                    contentType('text/html') 
-                    content('$PROJECT_DEFAULT_CONTENT') 
-                    subject('$PROJECT_DEFAULT_SUBJECT') 
-                    sendTo { 
-                        recipientList() 
+            extendedEmail { 
+                recipientList('vinayaka_rs@outlook.com') 
+                defaultSubject('$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!') 
+                defaultContent('$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:\n' + '\n' + 'Check console output at $BUILD_URL to view the results.') 
+                contentType('text/html') 
+                triggers { 
+                    failure { 
+                        replyToList('$PROJECT_DEFAULT_REPLYTO') 
+                        contentType('text/html') 
+                        content('$PROJECT_DEFAULT_CONTENT') 
+                        subject('$PROJECT_DEFAULT_SUBJECT') 
+                        sendTo { 
+                            recipientList() 
+                        } 
                     } 
-                } 
-                success { 
-                    replyToList('$PROJECT_DEFAULT_REPLYTO') 
-                    contentType('text/html') 
-                    content('$PROJECT_DEFAULT_CONTENT') 
-                    subject('$PROJECT_DEFAULT_SUBJECT') 
-                    sendTo { 
-                        recipientList() 
+                    success { 
+                        replyToList('$PROJECT_DEFAULT_REPLYTO') 
+                        contentType('text/html') 
+                        content('$PROJECT_DEFAULT_CONTENT') 
+                        subject('$PROJECT_DEFAULT_SUBJECT') 
+                        sendTo { 
+                            recipientList() 
+                        } 
                     } 
-                } 
+                }
             } 
         }
     }
