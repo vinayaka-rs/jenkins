@@ -41,7 +41,7 @@ job('Spring-boot-build') {
                         } 
                     } 
                 }
-            } 
+                 
         }
     }
 
@@ -66,5 +66,27 @@ job('Spring-boot-test') {
     }
     steps {
         gradle('clean test')
+    }
+
+    publishers {
+        downstream('Spring-build-publish', 'SUCCESS')
+    }
+}
+
+job('Spring-build-publish') {
+    scm {
+        git {
+            remote {
+                url("https://github.com/vinayaka-rs/spring-boot-gradle.git")
+                credentials("605abf89-a797-4b53-ba81-427f3b29a12d")
+            }
+            extensions {
+                wipeOutWorkspace()
+            }
+            branch('master')
+        }
+    }
+    steps {
+        gradle('clean build')
     }
 }
