@@ -12,6 +12,7 @@ job('Spring-boot-build') {
         }
     }
     steps {
+        gradle('sonarqube')
         gradle('clean build')
     }
 
