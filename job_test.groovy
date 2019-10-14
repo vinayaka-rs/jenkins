@@ -19,7 +19,7 @@ job('Spring-boot-build') {
             extendedEmail { 
                 recipientList('vinayaka_rs@outlook.com') 
                 defaultSubject('$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!') 
-                defaultContent('$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:\n' + '\n' + 'Check console output at $BUILD_URL to view the results.') 
+                defaultContent('$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS') 
                 contentType('text/html') 
                 triggers { 
                     failure { 
