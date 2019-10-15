@@ -11,9 +11,9 @@ job('Spring-boot-build') {
             branch('master')
         }
     }
+
     steps {
-        gradle('sonarqube')
-        gradle('clean build')
+        gradle('clean build sonarqube')
         publishers { 
             mailer('vinayaka_rs@outlook.com', true, true) 
             extendedEmail { 
