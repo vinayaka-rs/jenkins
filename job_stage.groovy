@@ -1,5 +1,4 @@
-deliveryPipelineView('pipeline-dsl-example') {
-pipeline {
+pipelineJob('pipeline-dsl-example') {
     stages {
         stage('Build And Deploy') {
             steps {
@@ -17,5 +16,4 @@ pipeline {
 
         }
     }
-}
 }
