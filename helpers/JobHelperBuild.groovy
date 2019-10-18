@@ -2,7 +2,7 @@ package helpers
 
 import javaposse.jobdsl.dsl.DslFactory
 import javaposse.jobdsl.dsl.Job
-public class JobHelperBuild {
+class JobHelperBuild {
     private final DslFactory dslFactory
 
     JobHelperBuild(DslFactory d) {
