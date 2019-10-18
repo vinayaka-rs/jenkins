@@ -1,4 +1,4 @@
-import helpers.JobHelperPublish
+import helpers.*
 
 def jobHelperpublish = new JobHelperPublish(this)
 //Jobs for Realtime HBase cluster 
