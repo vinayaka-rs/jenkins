@@ -3,13 +3,7 @@ pipelineJob('pipeline-stage') {
     job('Git') {
         deliveryPipelineConfiguration('Git', 'git clone')
         steps {
-            checkout([
-                $class: 'GitSCM',
-                branches: [[name: '*/master']],
-                userRemoteConfigs: [[url: 'https://github.com/vinayaka-rs/spring-boot-gradle.git', credentialsId: '605abf89-a797-4b53-ba81-427f3b29a12d']],
-                poll: true,
-                interval: '* * * * *']
-            )
+            git branch: 'master', credentialsId: '605abf89-a797-4b53-ba81-427f3b29a12d', url: 'https://github.com/vinayaka-rs/spring-boot-gradle.git'
         }
     }
     job('Build') {
