@@ -1,4 +1,5 @@
-pipelineJob('pipeline-dsl-example') {
+pipeline {
+    agent any
     stages {
         stage('Build And Deploy') {
             steps {
