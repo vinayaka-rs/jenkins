@@ -1,5 +1,5 @@
 pipelineJob('pipeline-stage') {
-    agent any
+//    agent any
     job('Git') {
         deliveryPipelineConfiguration('Git', 'git clone')
         steps {
