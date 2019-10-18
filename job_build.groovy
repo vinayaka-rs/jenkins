@@ -1,5 +1,5 @@
-import helpers.*
+import helpers.JobHelperBuild
 
-JobHelperBuild jobHelperbuild = new JobHelperBuild(this)
+def jobHelperbuild = new JobHelperBuild(this)
 //Jobs for Realtime HBase cluster 
 jobHelperbuild.alertsJob('properties.groovy')
