@@ -12,7 +12,7 @@ class JobHelperBuild {
     Job alertsJob(
             String propertyfilepath
     ) {
-        def config = new ConfigSlurper().parse(new File(propertyfilepath).toURI().toURL())
+        def config = new ConfigSlurper().parse(dslFactory.readFileFromWorkspace(propertyfilepath))
         def job = dslFactory.job(config.job.pipelines.build_job_name)
         job.with {
             scm {
