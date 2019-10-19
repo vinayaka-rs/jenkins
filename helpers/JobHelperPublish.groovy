@@ -12,7 +12,7 @@ class JobHelperPublish {
     Job alertsJob(
             String propertyfilepath
     ) {
-        def config = new ConfigSlurper().parse(readFileFromWorkspace(propertyfilepath))
+        def config = new ConfigSlurper().parse(new File(propertyfilepath))
         def job = dslFactory.job(config.job.pipelines.publish_job_name)
         job.with {
             scm {
