@@ -1,5 +1,6 @@
-pipelineJob('pipeline-stage') {
-//    agent any
+pipeline {
+//pipelineJob('pipeline-stage') {
+    agent any
     stages {
         stage('git') {
             steps {
