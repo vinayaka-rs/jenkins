@@ -16,4 +16,4 @@ include 'api'
 include 'services:webservice'
 */
 
-rootProject.name = 'fedci-job-dsl-template'
+rootProject.name = 'jenkins-job-dsl-template'
